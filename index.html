@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>opeNow | Do Cool Stuff</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  </head>
+ 
+
+
+<div id="index-banner" class="parallax-container">
+
+  <div class="container"> 
+    <h1 class="header center white-text">opeNow</h1>
+    <div class="row center">
+      <h5 class="header col s12 white-text light center">Your next adventure is right around the corner.</h5>
+    </div>
+    <div class='row center'>
+      <input id="pac-input" class='col s8' placeholder="Start typing your location...">
+      <div class='col s2 hero-div white-text'>or</div>
+      <button id='js-geolocate' class="waves-effect waves-light btn col s2">Find me</button>
+    </div>
+  </div>
+  <div class="parallax"><img src="assets/hero2.jpg" alt="background image" class='hero'></div>
+</div>
+
+ <body>
+  <div class="container">
+    <h5>Find new things to do near:<span class='space' id='current-location'></span></h5>
+  </div>
+  <div class='container'>
+  <div class="row">
+    <div class="switch col s4">
+      <h6>Open Now</h6>
+      <label>
+        No
+        <input type="checkbox" name="js-open" checked="checked">
+        <span class="lever"></span>
+        Yes
+      </label>
+    </div>
+
+    <div class="switch col s4">
+      <h6>Outdoors</h6>
+      <label>
+        No
+        <input type="checkbox" name="js-outdoor" checked="checked">
+        <span class="lever"></span>
+        Yes
+      </label>
+    </div>
+
+    <div class="switch col s4">
+    <h6>Indoors</h6>
+    <label>
+      No
+      <input type="checkbox" name="js-indoor" checked="checked">
+      <span class="lever"></span>
+      Yes
+    </label>
+    </div>
+  </div>
+  </div>
+
+
+  <div class='container'>
+    <div class='row'>
+    <div class="input-field col s6">
+      <select class='js-radius'>
+        <option value="" disabled selected>Miles from Location</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected="selected">5</option>
+        <option value="4">10</option>
+      </select>
+      <label>Miles from Location</label>
+    </div>
+    <button id='js-search' class="waves-effect waves-light btn-large col s3 offset-s1">Search</button>
+  </div>
+  </div>
+
+    
+
+  
+
+  
+
+  
+
+  
+  
+<div class='container'>
+  <div id='map' class='section'></div>
+    <ul class="collection" id='js-search-results'>
+    </ul>
+</div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDil2PmOpbI5tikdsTnXiz7NpnVWQRcFo4&libraries=places&callback=initMap">
+  </script>
+ <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> 
+
+  <script type="text/javascript" src='app.js'></script>
+
+  </body>
+</html>

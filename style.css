@@ -1,0 +1,63 @@
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    background-color: #f7f7f7;
+}
+
+#map {
+	height: 400px;
+}
+
+nav {
+    padding-left: 30px;
+}
+
+
+.space {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.circle {
+    border-radius: 0%;
+}
+
+.hero {
+    width: 100%;
+}
+
+#pac-input {
+    color: white;
+}
+
+.parallax {
+    background-color: black;
+}
+
+.parallax img {
+    opacity: 0.5;
+}
+
+.parallax-container h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 150px;
+}
+
+.waves-effect.waves-brown .waves-ripple {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(121, 85, 72, 0.65);
+    }
+
+.hero-div {
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px
+}
+.container {
+    padding: 30px;
+}
