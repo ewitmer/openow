@@ -45,19 +45,41 @@ nav {
 
 .parallax-container h1 {
     font-family: 'Amatic SC', cursive;
-    font-size: 150px;
+    font-size: 8em;
 }
 
-.waves-effect.waves-brown .waves-ripple {
-     /* The alpha value allows the text and background color
-     of the button to still show through. */
-      background-color: rgba(121, 85, 72, 0.65);
-    }
+.parallax-container h5 {
+    
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: 0.04em;
+    font-weight: 100;
+    line-height: 1.5em;
+}
 
 .hero-div {
     font-family: 'Amatic SC', cursive;
     font-size: 30px
 }
+
 .container {
-    padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container p {
+  font-size: 1.5em;
+  font-weight: 100;
+  line-height: 1.5em;
+}
+
+.heading h5 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3em;
+  letter-spacing: 0.04;
+  padding-top: 10px;
+}
+
+.heading p {
+  border-bottom: 0.5px solid gray; 
 }

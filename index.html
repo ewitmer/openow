@@ -22,32 +22,28 @@
     <div class="row center">
       <h5 class="header col s12 white-text light center">Your next adventure is right around the corner.</h5>
     </div>
-    <div class='row center'>
-      <input id="pac-input" class='col s8' placeholder="Start typing your location...">
+    <div class='row'>
+      <input id="pac-input" class='col s8 offset-s2' placeholder="Start typing your location...">
       <div class='col s2 hero-div white-text'>or</div>
-      <button id='js-geolocate' class="waves-effect waves-light btn col s2">Find me</button>
+    </div>
+    <div class='row'>  
+      <button id='js-geolocate' class="waves-effect waves-light btn col s3 offset-s2">Find me</button>
     </div>
   </div>
   <div class="parallax"><img src="assets/hero2.jpg" alt="background image" class='hero'></div>
 </div>
 
  <body>
-  <div class="container">
-    <h5>Find new things to do near:<span class='space' id='current-location'></span></h5>
+  <div class="container center heading">
+    <h5>Discover new things to do in your own backyard.</h5>
+  </div>
+  <div class="container heading">
+    <p>I'm looking for something:</p>
   </div>
   <div class='container'>
   <div class="row">
-    <div class="switch col s4">
-      <h6>Open Now</h6>
-      <label>
-        No
-        <input type="checkbox" name="js-open" checked="checked">
-        <span class="lever"></span>
-        Yes
-      </label>
-    </div>
 
-    <div class="switch col s4">
+    <div class="switch col s6">
       <h6>Outdoors</h6>
       <label>
         No
@@ -57,7 +53,7 @@
       </label>
     </div>
 
-    <div class="switch col s4">
+    <div class="switch col s6">
     <h6>Indoors</h6>
     <label>
       No
@@ -70,11 +66,13 @@
   </div>
 
 
-  <div class='container'>
-    <div class='row'>
+  <div class="container heading">
+    <p>I'm willing to travel:</p>
+  </div>
+    <div class='row container heading'>
     <div class="input-field col s6">
       <select class='js-radius'>
-        <option value="" disabled selected>Miles from Location</option>
+        <option value="" disabled selected>Miles from my Location</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3" selected="selected">5</option>
@@ -82,19 +80,29 @@
       </select>
       <label>Miles from Location</label>
     </div>
-    <button id='js-search' class="waves-effect waves-light btn-large col s3 offset-s1">Search</button>
+    </div>  
+  <div class="container heading">
+    <p>Only show me places that are open now:</p>
+  </div>
+  <div class='row container heading'>
+    <div class="switch col s4">
+      <h6>Open Now</h6>
+      <label>
+        No
+        <input type="checkbox" name="js-open" checked="checked">
+        <span class="lever"></span>
+        Yes
+      </label>
+    </div>
+  </div>
+  <div class='row container heading'>
+    <h5>Ready to explore:<span class='space' id='current-location'></span></h5>
+  </div>
+  <div class='row center container'>
+     <button id='js-search' class="waves-effect waves-light btn col s4">Search</button>
   </div>
   </div>
-
-    
-
-  
-
-  
-
-  
-
-  
+  </div>
   
 <div class='container'>
   <div id='map' class='section'></div>
