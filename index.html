@@ -37,13 +37,9 @@
   <div class="container center heading">
     <h5>Discover new things to do in your own backyard.</h5>
   </div>
-  <div class="container heading">
-    <p>I'm looking for something:</p>
-  </div>
-  <div class='container'>
-  <div class="row">
-
-    <div class="switch col s6">
+  <div class="container heading row valign-wrapper">
+    <p class='col s4 valign'>I'm looking for something:</p>
+    <div class="switch col center s4 valign">
       <h6>Outdoors</h6>
       <label>
         No
@@ -53,7 +49,7 @@
       </label>
     </div>
 
-    <div class="switch col s6">
+    <div class="switch col center s4 valign">
     <h6>Indoors</h6>
     <label>
       No
@@ -63,14 +59,10 @@
     </label>
     </div>
   </div>
-  </div>
 
-
-  <div class="container heading">
-    <p>I'm willing to travel:</p>
-  </div>
-    <div class='row container heading'>
-    <div class="input-field col s6">
+  <div class="container heading row valign-wrapper">
+    <p class='col s4 valign'>Willing to travel:</p>
+    <div class="input-field col s7 offset-s1 valign">
       <select class='js-radius'>
         <option value="" disabled selected>Miles from my Location</option>
         <option value="1">1</option>
@@ -79,13 +71,13 @@
         <option value="4">10</option>
       </select>
       <label>Miles from Location</label>
-    </div>
     </div>  
-  <div class="container heading">
-    <p>Only show me places that are open now:</p>
-  </div>
-  <div class='row container heading'>
-    <div class="switch col s4">
+   </div>
+
+
+  <div class="container heading row valign-wrapper">
+    <p class='col s4 valign'>Want to go now:</p>
+    <div class="switch col center s4 valign">
       <h6>Open Now</h6>
       <label>
         No
@@ -94,9 +86,11 @@
         Yes
       </label>
     </div>
-  </div>
+      <div class="switch col center s4 valign"></div>
+    </div>
+
   <div class='row container heading'>
-    <h5>Ready to explore:<span class='space' id='current-location'></span></h5>
+    <h5>Ready to explore:<span class='space' id='current-location'>oops...did you tell us where you are?</span></h5>
   </div>
   <div class='row center container'>
      <button id='js-search' class="waves-effect waves-light btn col s4">Search</button>
