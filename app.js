@@ -1,21 +1,19 @@
-//add state object
 //separate functions that change state of object
 //add sort by ranking
 
 var map;
 var infowindow;
-var pos = {lat: 43.161, lng: -77.610};
-var posText = '';
-var prevPage;
-var nextPage;
 
-function setState(prop, value){
-  //state.prop = value;
-}
+var currentState = {
+  positionLat: 43.161,
+  positionLng: -77.610,
+  positionName: ''
+};
 
 function initMap() {
     // Create the autocomplete object, restricting the search to geographical
     // location types.
+
     autocomplete = new google.maps.places.Autocomplete(
         (document.getElementById('pac-input')),
         {types: ['geocode']});
@@ -29,19 +27,17 @@ function fillInAddress() {
     // Get the place details from the autocomplete object, update the current lng/lat coordinates,
     // place name, and display the place name on the page.
     var place = autocomplete.getPlace();
-    pos.lat = place.geometry.location.lat();
-    pos.lng = place.geometry.location.lng();
-    posText = place.formatted_address;
+    currentState.positionLat = place.geometry.location.lat();
+    currentState.positionLng = place.geometry.location.lng();
+    currentState.positionName = place.formatted_address;
     displayPlace()
-
-   // setState(pos.lat, place.geometry.location.lat());
-
   }
 
 //builds blank map then calls search function
 function buildMap() {
+
   map = new google.maps.Map(document.getElementById('map'), {
-    center: pos,
+    center: getPosition(),
     zoom: 13
   });
   infowindow = new google.maps.InfoWindow();
@@ -52,10 +48,8 @@ function buildMap() {
 function searchMap() {
   var service = new google.maps.places.PlacesService(map);
 
-  //state.pos
-  //state.typesArray
   var request = {
-    location: pos,
+    location: getPosition(),
     radius: $("select option:selected").text() * 1609.344,
     types: getTypesArray(),
     openNow: $("input[name='js-open']").prop("checked")
@@ -63,6 +57,9 @@ function searchMap() {
   service.nearbySearch(request, displayResults)
 }
 
+function getPosition() {
+  return {lat: currentState.positionLat, lng: currentState.positionLng}
+}
 
 function getTypesArray() {
   var indoorPlaces = ["aquarium", "art_gallery", "book_store", "bowling_alley", "gym", "library", "movie_theater", "museum"];
@@ -95,8 +92,6 @@ function displayResults(results, status, next_page_token) {
     }
   }
   $('#js-search-results').html(resultElement);
-  //state.nextPage
-  nextPage = next_page_token.l;
 }
 
 //helper function to create markers for map
@@ -132,14 +127,14 @@ function addRating(place) {
 }
 
 
-//update lat+lng in pos object and display the location on the page when user uses 'find me'
+//update lat+lng in position object and display the location on the page when user uses 'find me'
 function updateCoordinates(callback) {
   if(navigator.geolocation) {
 
     navigator.geolocation.getCurrentPosition(function(position) {
 
-      pos.lat = position.coords.latitude,
-      pos.lng = position.coords.longitude
+      currentState.positionLat = position.coords.latitude,
+      currentState.positionLng = position.coords.longitude
 
         // and here you call the callback with whatever
         // data you need to return as a parameter.
@@ -151,8 +146,8 @@ function updateCoordinates(callback) {
 //function gets a name of the current placed based on lng/lat and reverse geocoding
 function getLocation(callback) {
   var geocoder = new google.maps.Geocoder;
-  geocoder.geocode({'location': pos}, function(results) {
-    posText = results[0].formatted_address;
+  geocoder.geocode({'location': getPosition()}, function(results) {
+    currentState.positionName = results[0].formatted_address;
 
     callback();
   })
@@ -160,12 +155,7 @@ function getLocation(callback) {
 
 // displays place name on the page
 function displayPlace() {
-  $("#current-location").text(posText);
-}
-
-
-function toggleLoading(){
-  $('#loading-text').toggleClass("visibility");
+  $("#current-location").text(currentState.positionName);
 }
 
 //on click update location based on where user is
